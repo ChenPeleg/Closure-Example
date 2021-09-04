@@ -2,13 +2,16 @@ let bankBalance = 0;
 
 function bankAction(action, sum) {
 
-    if (action == 'add') {
+    if (action == 'deposit') {
         bankBalance += sum
     }
 
-    if (action == 'pull') {
+    if (action == 'withdraw') {
         bankBalance -= sum
     }
-    return bankBalance
+    return "Your balance is " + bankBalance + "$"
 }
-//alert('colosur-1')
+console.log(bankAction('deposit', 200)) // Your balance is 200$
+console.log(bankAction('withdraw', 50)) // Your balance is 150$
+bankBalance = bankBalance - 100000
+console.log(bankAction('withdraw', 0))
